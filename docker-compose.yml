@@ -28,6 +28,7 @@ services:
     volumes:
       - ./remote:/home/virtual/ftp/remote
     environment:
+      PASV_ADDRESS: 127.0.0.1
       VSFTPD_USER_1: "ftp:pass:1001:"
       PASV_MIN_PORT: 30100
       PASV_MAX_PORT: 30109
@@ -40,6 +41,7 @@ services:
       - ./remote:/home/virtual/ftps/remote
     environment:
       VSFTPD_USER_1: "ftps:pass:1001:"
+      PASV_ADDRESS: 127.0.0.1
       PASV_MIN_PORT: 30110
       PASV_MAX_PORT: 30119
     ports:
